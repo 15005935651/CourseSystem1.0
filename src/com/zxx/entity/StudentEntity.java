@@ -2,7 +2,6 @@ package com.zxx.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
-
 /**
  * @author zxx
  * @date 2018/10/8 19:01
@@ -14,6 +13,7 @@ public class StudentEntity {
     private String studentPassword;
     private String studentName;
     private String studentMajor;
+
 
     @Id
     @Column(name = "student_id")
