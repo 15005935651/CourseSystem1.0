@@ -19,5 +19,16 @@
         <action name="select_course" class="com.zxx.action.StudentSelectCourseAction" method="execute">
             <result name="success">/jsp/student_select_course.jsp</result>
         </action>
+
+        <action name="student_info" class="com.zxx.action.StudentInfoAction" method="execute">
+            <result name="success">/jsp/student_info.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="student_course" class="com.zxx.action.StudentCourseAction">
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success">/jsp/student_course_info</result>
+        </action>
+
     </package>
 </struts>

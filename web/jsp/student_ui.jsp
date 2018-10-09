@@ -16,5 +16,14 @@
 <s:form action="select_course" namespace="/" method="POST">
     <s:submit value="开始选课"/>
 </s:form>
+
+<s:form action="student_info" namespace="/" method="POST">
+    <s:submit value="个人信息"/>
+</s:form>
+
+<s:form action="student_course" namespace="/" method="POST">
+    <s:submit value="我的课表"/>
+</s:form>
+
 </body>
 </html>

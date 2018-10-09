@@ -1,5 +1,4 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -10,33 +9,53 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>学生选课系统</title>
+    <title>欢迎${username}登录学生选课系统</title>
+    <style>
+        body {
+            text-align: center
+        }
+    </style>
 </head>
 <body>
 
-课程编号:${courseID}<br>
-课程名称:${courseName}<br>
-开课时间:${course_time}<br>
-课程教室:${course_classroom}<br>
-任课教师:${course_teacher}<br>
-课程学分:${course_credit}<br>
-限选人数:${course_num_of_stu}<br>
+<h1>欢迎登录学生选课系统</h1>
+<br/>
+<br/>
+<br/>
+<table border="1" width="100%">
 
-<table style="width:100%;border:1px white solid">
-    <tr bgcolor="#4F81BD"style="color: #fff;">
-        <th style="text-align: center"><%=columns[0]%></th>
-        <th style="text-align: center"><%=columns[1]%></th>
-    </tr>
-    <c:forEach items="${list}" var="row" varStatus="status">
-        <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
-            <td align="center">${status.current.key}</td>
-            <td align="center">${row.value}</td>
-        </tr>
-    </c:forEach>
+    <tr>
+        <td><h3>课程名称</h3></td>
+        <td><h3>课程名称</h3></td>
+        <td><h3>开课时间</h3></td>
+        <td><h3>课程教室</h3></td>
+        <td><h3>任课教师</h3></td>
+        <td><h3>课程学分</h3></td>
+        <td><h3>限选人数</h3></td>
+        <td><h3>是否选课</h3></td>
+    <tr>
+        <s:iterator value="courseEntityList" var="c">
+    <tr>
+        <td>${c.courseId}</td>
+        <td>${c.courseName}</td>
+        <td>${c.courseTime}</td>
+        <td>${c.courseClassroom}</td>
+        <td>${c.courseTeacher}</td>
+        <td>${c.courseCredit}</td>
+        <td>${c.courseNumOfStu}</td>
+        <td>
+            <select name="YesOrNo">
+                <option value="false">否</option>
+                <option value="true">是</option>
+            </select>
+        </td>
+    <tr>
+        </s:iterator>
 </table>
-
-
-
+<br/>
+<br/>
+<br/>
+<button type="button"><h5>确定选课</h5></button>
 
 
 </body>

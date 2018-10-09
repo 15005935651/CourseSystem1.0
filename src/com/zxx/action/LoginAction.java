@@ -1,9 +1,8 @@
 package com.zxx.action;
-import com.opensymphony.xwork2.ActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.zxx.service.LoginService;
 
-import java.util.Map;
 
 /**
  * @author zxx
@@ -27,12 +26,10 @@ public class LoginAction extends ActionSupport {
     public String execute() throws Exception {
 //        Map<String,Object> attributes = ActionContext.getContext().getSession();//记录用户登录信息
         loginService = new LoginService();
-        boolean isRight = loginService.validate(id,userpassword);
-        if(isRight){
-//            attributes.put("username", id);
-//            attributes.put("password", userpassword);
+        boolean isRight = loginService.validate(id, userpassword);
+        if (isRight) {
             return SUCCESS;
-        }else {
+        } else {
             return ERROR;
         }
     }
