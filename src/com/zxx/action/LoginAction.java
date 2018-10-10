@@ -26,11 +26,17 @@ public class LoginAction extends ActionSupport {
     public String execute() throws Exception {
 //        Map<String,Object> attributes = ActionContext.getContext().getSession();//记录用户登录信息
         loginService = new LoginService();
-        boolean isRight = loginService.validate(id, userpassword);
-        if (isRight) {
-            return SUCCESS;
-        } else {
+        try {
+            boolean isRight = loginService.validate(id, userpassword);
+            if (isRight) {
+                return SUCCESS;
+            } else {
+                return ERROR;
+            }
+
+        }catch (Exception e){
             return ERROR;
         }
+
     }
 }

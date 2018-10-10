@@ -15,9 +15,24 @@ public class StudentInfoAction extends ActionSupport {
     private String STUDENT_PASSWORD;
     private String STUDENT_MAJOR;
 
+    public int getSTUDENTID() {
+        return STUDENTID;
+    }
+
+    public String getSTUDENT_NMAE() {
+        return STUDENT_NMAE;
+    }
+
+    public String getSTUDENT_PASSWORD() {
+        return STUDENT_PASSWORD;
+    }
+
+    public String getSTUDENT_MAJOR() {
+        return STUDENT_MAJOR;
+    }
 
     @Override
-    public String execute()  {
+    public String execute() throws Exception {
 
         StudentInfoService studentInfoService =new StudentInfoService();
 
@@ -27,10 +42,6 @@ public class StudentInfoAction extends ActionSupport {
             STUDENT_NMAE = studentEntity.getStudentName();
             STUDENT_PASSWORD = studentEntity.getStudentPassword();
             STUDENT_MAJOR = studentEntity.getStudentMajor();
-            System.out.println(STUDENT_MAJOR+
-                    STUDENT_PASSWORD+
-                    STUDENT_NMAE+
-                    STUDENTID);
             return SUCCESS;
         }catch (Exception e){
             return ERROR;
