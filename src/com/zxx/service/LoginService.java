@@ -1,6 +1,7 @@
 package com.zxx.service;
 
 import com.zxx.entity.StudentEntity;
+import com.zxx.util.UserInfoUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -31,6 +32,8 @@ public class LoginService {
 
         for (StudentEntity s:studentEntities) {
             if(s.getStudentId()==id && s.getStudentPassword().equals(userpassword)){
+                //验证成功把信息放入全局Map中
+                UserInfoUtil.map.put(id,userpassword);
                 transaction.commit();
                 session.close();
                 sessionFactory.close();

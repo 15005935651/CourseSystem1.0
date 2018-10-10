@@ -12,5 +12,10 @@
 </head>
 <body>
 <h1>学生信息</h1>
+学号:${STUDENTID}<br>
+姓名:${STUDENT_NMAE}<br>
+密码:${STUDENT_PASSWORD}<br>
+专业:${STUDENT_MAJOR}<br>
+
 </body>
 </html>
